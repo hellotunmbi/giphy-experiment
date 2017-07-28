@@ -1,0 +1,35 @@
+
+.home__display {
+    padding: 20px;
+    /*background-color: #fff;*/
+    box-sizing: border-box;
+    /*color: #000;*/
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.home__pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.display_area {
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+.panel-footer {
+    text-align: left;
+}

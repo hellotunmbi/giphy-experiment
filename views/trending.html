@@ -1,0 +1,34 @@
+<div ng-controller="trendingCtrl">
+
+        <div class="home__content">
+            <div class="col-md-12">
+                <h3>Trending List of Giphy:</h3>
+            </div> 
+
+        </div>
+
+        <div class="alert alert-danger" ng-if="{{error}}">Sorry, could not get resource</div>
+
+        <div class="row home__pages">
+
+            
+
+            <div class="col-md-3" ng-repeat="trend in trending">
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                       <a href="{{ trend.url }}" target="_blank"> <img src="{{ trend.images.downsized.url }}" width="{{ trend.images.fixed_width.width }}" height="{{ trend.images.fixed_height.height }}" alt=""></a>
+                    </div>
+                    <div class="panel-footer">
+                        By: {{ trend.username }} <br/>
+                        Date of Trend: {{ trend.trending_datetime }}
+                    </div>
+                </div>
+
+
+            </div>
+
+            
+        </div>
+            
+</div>
