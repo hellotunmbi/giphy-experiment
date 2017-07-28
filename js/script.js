@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
 
 
 app.controller('trendingCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('http://api.giphy.com/v1/gifs/trending?api_key=3a5d40cc20b943719f53a35ec3b2abff')
+    $http.get('https://api.giphy.com/v1/gifs/trending?api_key=3a5d40cc20b943719f53a35ec3b2abff')
         .then(function(response) {
             $scope.trending = response.data.data;
 
@@ -36,7 +36,7 @@ app.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.getGiphies = function(param) {
 
-        $http.get('http://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff' + '&q='+$scope.searchparam)
+        $http.get('https://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff&q='+$scope.searchparam)
         .then(function(response) {
             $scope.results = response.data.data;
             console.log($scope.results)
