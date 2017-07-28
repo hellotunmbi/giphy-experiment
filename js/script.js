@@ -1,7 +1,5 @@
 var app = angular.module('giphyExp', ['ngRoute']);
 
-var baseurl = "http://api.giphy.com/v1/gifs/";
-
 app.config(function($routeProvider) {
     $routeProvider
         .when("/trending", {
@@ -22,13 +20,13 @@ app.config(function($routeProvider) {
 
 app.controller('trendingCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('https://api.giphy.com/v1/gifs/trending?api_key=3a5d40cc20b943719f53a35ec3b2abff')
-        .then(function(response) {
-            $scope.trending = response.data.data;
+            .then(function(response) {
+                $scope.trending = response.data.data;
 
-            console.log($scope.trending);
-        }, function(error) {
-        //    console.log(error);
-        })
+                console.log($scope.trending);
+            }, function(error) {
+                console.log(error);
+            });
 }]);
 
 
@@ -42,13 +40,11 @@ app.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
             console.log($scope.results)
         },
          function(error){ 
-            
+            $scope.error = error
          })
 
 
     }
-
-    
 
     
 }]);
