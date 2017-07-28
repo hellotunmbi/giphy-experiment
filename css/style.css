@@ -33,3 +33,15 @@
 .panel-footer {
     text-align: left;
 }
+
+.searchparam {
+    color: #EC9DED;
+}
+
+.title {
+    font-family: 'Zilla Slab', serif;
+}
+
+.menu {
+    font-family: 'Open Sans', sans-serif;
+}
