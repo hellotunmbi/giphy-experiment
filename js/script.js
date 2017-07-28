@@ -1,5 +1,6 @@
 var app = angular.module('giphyExp', ['ngRoute']);
 
+var baseurl = "http://api.giphy.com/v1/gifs/";
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -33,21 +34,23 @@ app.controller('trendingCtrl', ['$scope', '$http', function($scope, $http) {
 
 app.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
 
-    $scope.getGiphies = function() {
-        console.log("someone clicked me");
+    $scope.getGiphies = function(param) {
+        //console.log("someone clicked me"+ $scope.searchparam);
 
-        $scope.message = "hi there";
+        $http.get('http://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff' + '&q='+$scope.searchparam)
+        .then(function(response) {
+            $scope.results = response.data.data;
+            console.log($scope.results)
+        },
+         function(error){ 
+
+         })
+
 
     }
 
     
 
-    // $http.get('http://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff' + '& q=cheese')
-    //     .then(function(response) {
-    //         $scope.result = response.result;
-    //     },
-    //      function(error){ 
-
-    //      })
+    
 }]);
 //end of searchCtrl
