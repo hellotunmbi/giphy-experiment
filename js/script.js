@@ -1,11 +1,17 @@
 var app = angular.module('giphyExp', ['ngRoute']);
 
+var baseurl = "http://api.giphy.com/v1/gifs/";
 
 app.config(function($routeProvider) {
     $routeProvider
         .when("/trending", {
             templateUrl: 'views/trending.html',
             controller: 'trendingCtrl'
+        })
+
+        .when("/search", {
+            templateUrl: 'views/search.html',
+            controller: 'searchCtrl'
         })
 
         .otherwise({
@@ -26,3 +32,25 @@ app.controller('trendingCtrl', ['$scope', '$http', function($scope, $http) {
 }]);
 
 
+app.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
+
+    $scope.getGiphies = function(param) {
+        //console.log("someone clicked me"+ $scope.searchparam);
+
+        $http.get('http://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff' + '&q='+$scope.searchparam)
+        .then(function(response) {
+            $scope.results = response.data.data;
+            console.log($scope.results)
+        },
+         function(error){ 
+
+         })
+
+
+    }
+
+    
+
+    
+}]);
+//end of searchCtrl
