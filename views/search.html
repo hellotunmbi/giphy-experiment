@@ -14,9 +14,12 @@
             <div ng-bind="message"></div>
         </div>
 
+        <div ng-if="isLoading"> Loading... </div>
+        
         <div class="row" ng-if="results" style="text-align: center">
             <div><h3>Search Result for: <span class="searchparam"> {{ searchparam }} </span> </h3></div>
         </div>
+
 
 
         <div class="row home__pages">
