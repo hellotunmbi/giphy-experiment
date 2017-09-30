@@ -10,4 +10,4 @@ Resources Used
 
 Improvements will be appreciated.
 
-Follow me on Twitter: [https://www.twitter.com/hellotunmbi](@hellotunmbi)
+Follow me on Twitter: [@hellotunmbi](https://www.twitter.com/hellotunmbi)
