@@ -45,3 +45,7 @@
 .menu {
     font-family: 'Open Sans', sans-serif;
 }
+.menu a{
+  color: white;
+  text-decoration:none;
+}
