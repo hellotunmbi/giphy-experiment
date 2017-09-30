@@ -39,9 +39,40 @@
 }
 
 .title {
-    font-family: 'Zilla Slab', serif;
+    font-family: 'Trebuchet MS';
 }
 
 .menu {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Oxygen', sans-serif;
+}
+
+@import 'https://fonts.googleapis.com/css?family=|Oxygen';
+
+body{
+	background: linear-gradient(to right, #834d9b, #d04ed6);
+	color: white;
+}
+
+a{
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 12px 20px;
+	text-align: center;
+	display: inline-block;
+	font-size: 18px;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	cursor: pointer;
+	margin-left: 5px;
+	border-radius: 2px;
+	opacity: 0.5;
+
+}
+a:hover{
+	background-color: transparent;
+	color: white;
+	border: 1px solid #ecf0f1;
+	color: #ecf0f1;
+	opacity: 1;
 }
