@@ -1,5 +1,5 @@
 <div ng-controller="trendingCtrl">
-
+        <div ng-if="isLoading"> Loading... </div>
         <div class="home__content">
             <div class="col-md-12">
                 <h3>Trending List of Giphy:</h3>
@@ -7,7 +7,7 @@
 
         </div>
 
-        <div class="alert alert-danger" ng-if="{{error}}">Sorry, could not get resource</div>
+        <div class="alert alert-danger" ng-if="error">Sorry, could not get resource</div>
 
         <div class="row home__pages">
 
