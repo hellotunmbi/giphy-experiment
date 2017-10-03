@@ -18,40 +18,32 @@ app.config(function($routeProvider) {
 });
 
 
-app.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
-   $scope.isFetching = false;
-}]);
-
-
-app.controller('trendingCtrl', ['$scope', '$http', 'ApiFactory', function($scope, $http, ApiFactory) {
-    const loadData = function() {
-        $scope.isLoading = true;
-        ApiFactory.getTrendingGifs()
+app.controller('trendingCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('https://api.giphy.com/v1/gifs/trending?api_key=3a5d40cc20b943719f53a35ec3b2abff')
             .then(function(response) {
-                $scope.isLoading = false;
                 $scope.trending = response.data.data;
+
                 console.log($scope.trending);
             }, function(error) {
                 console.log(error);
-        });
-    }
-    loadData();
+            });
 }]);
 
 
-app.controller('searchCtrl', ['$scope', '$http', 'ApiFactory', function($scope, $http, ApiFactory) {
-    $scope.isLoading = false;
-    $scope.getGiphies = function() {
-        $scope.isLoading = true;
-        ApiFactory.getSearchResults($scope.searchparam)
+app.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
+
+    $scope.getGiphies = function(param) {
+
+        $http.get('https://api.giphy.com/v1/gifs/search?api_key=3a5d40cc20b943719f53a35ec3b2abff&q='+$scope.searchparam)
         .then(function(response) {
             $scope.results = response.data.data;
-            $scope.isLoading = false
             console.log($scope.results)
         },
          function(error){ 
             $scope.error = error
          })
+
+
     }
 
     
