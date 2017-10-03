@@ -1,5 +1,5 @@
 <div ng-controller="searchCtrl" class="row">
-    
+
     <p>
         <h3>Search List of Giphy:</h3>
         <div class="">
@@ -8,18 +8,17 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search for a giphy" ng-model="searchparam">
                 </div>
-                <button type="submit" class="btn btn-default" ng-click="getGiphies()" >Search</button>
+                <button type="submit" class="btn btn-default" ng-click="getGiphies()">Search</button>
             </form>
 
             <div ng-bind="message"></div>
         </div>
 
-        <div ng-if="isLoading"> Loading... </div>
-        
-        <div class="row" ng-if="results" style="text-align: center">
-            <div><h3>Search Result for: <span class="searchparam"> {{ searchparam }} </span> </h3></div>
+        <div class="row search-form" ng-if="results" style="text-align: center">
+            <div>
+                <h3>Search Result for: <span class="searchparam"> {{ searchparam }} </span> </h3>
+            </div>
         </div>
-
 
 
         <div class="row home__pages">
@@ -28,23 +27,16 @@
 
                 <div class="panel panel-default">
                     <div class="panel-body">
-                       <a href="{{ result.url }}" target="_blank"> <img src="{{ result.images.original.url }}" width="{{ result.images.fixed_width.width }}" height="{{ result.images.fixed_height.height }}" alt=""></a>
+                        <a href="{{ result.url }}" target="_blank"> <img src="{{ result.images.original.url }}" width="{{ result.images.fixed_width.width }}" height="{{ result.images.fixed_height.height }}" alt=""></a>
                     </div>
                     <div class="panel-footer">
-                        Date Added: {{ result.trending_datetime }}
+                        <span class="bolded"> Date Added:</span> {{ result.trending_datetime }}
                     </div>
                 </div>
 
 
             </div>
 
-            
+
         </div>
-
-        
-    </p>
 </div>
-
-
-
-
